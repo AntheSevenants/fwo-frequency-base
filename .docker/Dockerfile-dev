@@ -1,0 +1,9 @@
+FROM python:bookworm
+LABEL maintainer="Anthe Sevenants <anthe.sevenants@kuleuven.be>"
+
+ENV PYTHONUNBUFFERED=1
+
+# Install MESA
+RUN pip install mesa
+
+CMD ["sh", "-c", "cd $MODEL_DIR && python app.py"]

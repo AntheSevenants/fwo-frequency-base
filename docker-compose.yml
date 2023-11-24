@@ -1,0 +1,13 @@
+version: '3'
+services:
+  model:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile-dev
+    image: mesa:dev
+    volumes:
+      - .:/srv/fwo-frequency/
+    environment:
+      MODEL_DIR: /srv/fwo-frequency/base/
+    ports:
+      - 8765:8765
